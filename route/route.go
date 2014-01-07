@@ -12,8 +12,6 @@ import (
 
 //const PathPrefix = "/emails/"
 
-var chttp = http.NewServeMux()
-
 func Register(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		log.Print("got a post")
