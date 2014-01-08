@@ -1,3 +1,3 @@
-package email_pg
+package db
 
 import "testing"
