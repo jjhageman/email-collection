@@ -8,8 +8,6 @@ import (
 	"log"
 )
 
-var db *sql.DB // global variable to share it between main and the HTTP handler
-
 func InitDb(conn string) *gorp.DbMap {
 	// connect to db using standard Go database/sql API
 	db, err := sql.Open("postgres", conn)

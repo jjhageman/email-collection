@@ -11,16 +11,16 @@ var validBasicEmail = regexp.MustCompile(`(?i)[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A
 
 // IDs are set only for Emails that are saved by a EmailManager.
 type Email struct {
-	ID        int64
-	Address   string
-	CreatedAt time.Time
+	ID      int64
+	Address string
+	Created time.Time
 }
 
 func NewEmail(address string) (*Email, error) {
 	if !isValid(address) {
 		return nil, fmt.Errorf("invalid email address")
 	}
-	return &Email{0, address, time.Now()}, nil
+	return &Email{Address: address, Created: time.Now()}, nil
 }
 
 // EmailManager manages a list of emails in memory.
