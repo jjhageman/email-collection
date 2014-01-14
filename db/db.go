@@ -4,11 +4,15 @@ import (
 	"database/sql"
 	"github.com/coopernurse/gorp"
 	"github.com/jjhageman/launch-rock/email"
-	_ "github.com/lib/pq"
+	"github.com/lib/pq"
 	"log"
+	"os"
 )
 
-func InitDb(conn string) *gorp.DbMap {
+func InitDb() *gorp.DbMap {
+	url := os.Getenv("DATABASE_URL")
+	conn, _ := pq.ParseURL(url)
+	conn += " sslmode=require"
 	// connect to db using standard Go database/sql API
 	db, err := sql.Open("postgres", conn)
 	checkErr(err, "sql.Open failed")

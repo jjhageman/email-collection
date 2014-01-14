@@ -44,7 +44,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 
 func RegisterHandlers() {
 	// initialize the DbMap
-	dbmap = db.InitDb(DB_CONN)
+	dbmap = db.InitDb()
 	//defer dbmap.Db.Close()
 
 	http.Handle("/", http.FileServer(http.Dir("static")))
