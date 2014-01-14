@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/jjhageman/launch-rock/email",
+	"GoVersion": "go1.2",
+	"Deps": []
+}
