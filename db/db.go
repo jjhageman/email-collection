@@ -10,7 +10,7 @@ import (
 )
 
 func InitDb() *gorp.DbMap {
-	url := os.Getenv("DATABASE_URL")
+	url := os.Getenv("HEROKU_POSTGRESQL_COPPER_URL")
 	conn, _ := pq.ParseURL(url)
 	conn += " sslmode=require"
 	// connect to db using standard Go database/sql API
