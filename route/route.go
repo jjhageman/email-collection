@@ -1,19 +1,14 @@
 package route
 
 import (
+	"fmt"
 	"github.com/coopernurse/gorp"
 	"github.com/jjhageman/launch-rock/db"
 	"github.com/jjhageman/launch-rock/email"
-	//"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 )
 
-//var emails = email.NewEmailManager()
-
-//const PathPrefix = "/emails/"
-var DB_CONN = "user=jjhageman dbname=devstatus sslmode=disable"
 var dbmap *gorp.DbMap
 
 func Register(w http.ResponseWriter, r *http.Request) {

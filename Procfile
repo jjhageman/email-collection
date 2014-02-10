@@ -1,1 +1,1 @@
-web: launch-rock
+web: email-collection
